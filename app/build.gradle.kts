@@ -70,11 +70,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    // Dagger Hilt
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
-    implementation(libs.androidx.hilt.navigation.compose)
-    kapt(libs.androidx.hilt.compiler)
+    // Compose Navigation
+    implementation(libs.navigation.compose)
 
     // Firebase
     implementation(platform(libs.firebase.bom))
@@ -82,9 +79,22 @@ dependencies {
     implementation(libs.firebase.auth.ktx)
     implementation(libs.play.services.auth)
 
+    // Dagger Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
+    kapt(libs.androidx.hilt.compiler)
+
+    // Coil
+    implementation(libs.coil.compose)
+
     // WorkManager
     implementation(libs.androidx.work.runtime.ktx)
     implementation(libs.androidx.hilt.work)
+
+    // Sheets Compose Dialogs
+    implementation ("com.maxkeppeler.sheets-compose-dialogs:core:1.0.1")
+    implementation ("com.maxkeppeler.sheets-compose-dialogs:clock:1.0.1")
 
     // Testing
     kaptAndroidTest(libs.hilt.android.compiler)
