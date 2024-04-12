@@ -93,8 +93,34 @@ dependencies {
     implementation(libs.androidx.hilt.work)
 
     // Sheets Compose Dialogs
-    implementation ("com.maxkeppeler.sheets-compose-dialogs:core:1.0.1")
-    implementation ("com.maxkeppeler.sheets-compose-dialogs:clock:1.0.1")
+    implementation (libs.core)
+    implementation (libs.clock)
+
+    // Extended Icons
+    implementation(libs.androidx.material.icons.extended)
+
+    // system UI Controller
+    implementation(libs.accompanist.systemuicontroller)
+
+    // Tooling Preview
+    implementation(libs.ui.tooling.preview)
+
+    // Pager
+    implementation(libs.accompanist.pager)
+    implementation(libs.accompanist.pager.indicators)
+
+    // Permissions
+    implementation(libs.accompanist.permissions)
+
+    // Room
+    implementation(libs.androidx.room.ktx)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.runtime)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.moshi)
+    implementation(libs.logging.interceptor)
 
     // Testing
     kaptAndroidTest(libs.hilt.android.compiler)
