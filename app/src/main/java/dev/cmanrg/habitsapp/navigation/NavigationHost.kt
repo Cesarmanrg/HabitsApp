@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import dev.cmanrg.habitsapp.authentication.presentation.login.LoginScreen
+import dev.cmanrg.habitsapp.authentication.presentation.signup.SignupScreen
 import dev.cmanrg.habitsapp.onboarding.presentation.OnboardingScreen
 
 @Composable
@@ -30,11 +31,18 @@ fun NavigationHost(
             })
         }
 
-        composable(NavigationRoute.Signup.route){
-            Text(text = "Esto es tu Signup erro")
+        composable(NavigationRoute.Signup.route) {
+            SignupScreen(onSignIn = {
+                navHostController.navigate(NavigationRoute.Home.route) {
+                    popUpTo(navHostController.graph.id) {
+                        inclusive = true
+                    }
+                }
+            }, onLogin = {
+                navHostController.popBackStack()
+            })
         }
-
-        composable(NavigationRoute.Home.route){
+        composable(NavigationRoute.Home.route) {
             Text(text = "Home")
         }
     }
